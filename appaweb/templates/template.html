@@ -1,0 +1,181 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>آپاوب-طراحی و تولید وبسایت و اپلیکیشن- آموزش برنامه نویسی</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="  سایت آموزش زبان های محتلف برنامه نویسی و طراحی و تولید وبسایت و اپلیکیشن">
+    <meta name="title" content="آپاوب-طراحی و تولید وبسایت و اپلیکیشن- آموزش برنامه نویسی">
+    <meta name="keywords" content="برنامه نویسی، زبان های برنامه نویسی، طراحی و تولید وبسایت، طراحی و تولیداپلیکیشن، پایتون">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}" > </script>
+      <script src="{% static 'js/owl.carousel.min.js' %}j"></script>
+    <script src="{% static 'js/myFile.js' %}" > </script>
+      <script src="{% static 'js/main.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+   <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+<body >
+
+{% block header %}
+<header >
+<div class="navMenu">
+ <nav class="navbar navbar-expand-lg " id="menu">
+     <a  href="#">  <img src="{% static 'img/logo-appaweb.png' %}" class="navbar-brand" alt="لوگو آپاوب" href="#" id="imagenav"></a>
+   <div class="collapse navbar-collapse" id="collapsibleNavbar"  >
+       <ul class="navbar-nav" id="navItem" >
+                <li class="nav-item" >
+                    <a class="nav-link" href="{% url 'appaweb:base' %}">صفحه اصلی</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="{% url 'appaweb:base' %}#khadamat" > خدمات </a>
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'appaweb:searchposts' %}">مقالات</a>
+                </li>
+       <li class="nav-item">
+                    <a class="nav-link" href="{% url 'appaweb:aboutUS' %}">درباره ما</a>
+                </li>
+                {% if request.user.is_staff or request.user.is_authenticated or request.user.is_superuser %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'appaweb:logout' %}" >خروج</a>
+                </li>
+                    {% else %}
+                     <li class="nav-item">
+                     <a class="nav-link" href="{% url 'appaweb:Signup' %}" >ثبت نام/ ورود</a>
+
+                </li>
+              {% endif %}
+            </ul>
+        </div>
+      <span onclick="openNav()" id="open">&#9776; </span>
+
+ </nav>
+
+</div>
+
+
+</header>
+
+{% endblock %}
+{# navbar responsive #}
+     <div class="sidenav" id="respnavbar"  >
+             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul class="navbar-nav" id="navItem2" >
+                <li class="nav-item" >
+                    <a class="nav-link" href="{% url 'appaweb:base' %}" onclick="closeNav()" > صفحه اصلی</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'appaweb:base' %}#khadamat " onclick="closeNav()">خدمات</a>
+                </li>
+               <li class="nav-item">
+                    <a class="nav-link" href="{% url 'appaweb:searchposts' %}" onclick="closeNav()">مقالات</a>
+                </li>
+            <li class="nav-item">
+                    <a class="nav-link" href="{% url 'appaweb:aboutUS' %}" onclick="closeNav()">درباره ما</a>
+                </li>
+                   {% if request.user.is_staff or request.user.is_authenticated or request.user.is_superuser %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'appaweb:logout' %}" onclick="closeNav()">خروج</a>
+                </li>
+                    {% else %}
+                     <li class="nav-item">
+                     <a class="nav-link" href="{% url 'appaweb:Signup' %}" onclick="closeNav()" >ثبت نام/ ورود</a>
+
+                </li>
+              {% endif %}
+
+            </ul>
+        </div>
+<main >
+ <div id="Body">
+    {% block content %}
+    {% endblock %}
+ <p></p>
+ </div>
+</main>
+<footer id="footer"  class=" footer fixed-bottom " >
+
+    <div class="div" dir="rtl" >
+    <div class="index">
+
+     <h5>   دسترسی سریع
+      </h5>
+        <p></p>
+ <a  href="{% url 'appaweb:Order' %}"  >ثبت سفارش</a>
+<br/>
+  <a href="{% url 'appaweb:onlinePackage' %}" >پکیج آموزشی</a>
+ <br/>
+ <a href="{% url 'appaweb:onlineLearn' %}">آموزش مجازی</a>
+
+<hr>
+    </div>
+         <div>
+
+     <h5>  تماس با ما</h5>
+        <p></p>
+09188140263
+        <br/>
+09129487433<br/>
+
+<hr>
+    </div>
+        <div >
+ <div class="justify index">
+  <h5>     شبکه مجازی
+ </h5>
+
+      <h6>بر روی آدرس کلیک کنید</h6>
+            اینستاگرام:
+<a href="https://www.instagram.com/appaweb.ir" >appaweb.ir</a>
+        <br/>
+تلگرام:
+            <a href="https://www.t.me/Appaweb_company">appaweb_company</a>
+       <br/>
+ایمیل:
+            <a href="mailto:appaweb.company@gmail.com">appaweb.company@gmail.com</a>
+            <br/>
+<hr>
+    </div>
+</div>
+    </div>
+   <div align="center" id="designed" > Designed by appaweb.ir
+    </div>
+    <br/>
+</footer>
+
+<div class="Top">
+ <a href="#menu">
+     <div id="goTop">
+   ^
+</div>
+</a>
+</div>
+
+</body>
+  <script src="{%  static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{%  static 'js/jquery-ui.js' %}"></script>
+  <script src="{%  static 'js/popper.min.js' %}"></script>
+  <script src="{%  static 'js/bootstrap.min.js' %}"></script>
+  <script src="{%  static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{%  static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{%  static 'js/aos.js' %}"></script>
+  <script src="{%  static 'js/jquery.fancybox.min.js' %}"></script>
+  <script src="{%  static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{%  static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{%  static 'js/jquery.sticky.js' %}"></script>
+  <script src="{%  static 'js/main.js' %}"></script>
+
+</html>
+

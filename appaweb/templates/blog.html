@@ -1,0 +1,92 @@
+{% extends "template.html" %}
+{% load static %}
+{% block body%}
+{% endblock %}
+{% block content %}
+
+<br/>
+{#  search for blog   #}
+ <div class="container center" dir="rtl" >
+<form  action="{% url 'appaweb:searchposts_check' %}" method="GET" value="{{request.GET.q}}"  >
+ <input type="text" required name="q" value="{{request.GET.q}}" class="input"  />
+ <input type="submit" name="submit" value="جستجو" class="btn btnsearch" />
+</form>
+    </div>
+<br>
+    {% if submitbutton != 'جستجو' or request.GET.q == '' %}
+
+    <div class="container center " id="blogText" >
+
+    {% if post %}
+{#        show post #}
+    {% for posts in post %}
+
+   <div class="shadow-lg padding-blog "  dir="rtl">
+<br>
+   {{ posts.image|safe }}
+
+  <h1> {{ posts.title }}</h1>
+
+ <p >
+     {{ posts.content|safe|truncatechars_html:100  }}
+    <p>
+       <form action="{% url "appaweb:searchposts_result" id=posts.id title=posts.title %}">
+            <div align="center">
+       <button class="btn btn-light btnblog"  type="submit">ادامه مطلب</button>
+       </div>
+   </form>
+        </p>
+       </div>
+
+    {% endfor %}
+    {% endif %}
+
+</div>
+{% endif %}
+
+
+{#  show result of search  #}
+{% if submitbutton == 'جستجو' and request.GET.q != '' %}
+{% if results %}
+{% for result in results %}
+
+ <div class="shadow-lg search container center blogText"  >
+
+  {{ result.image|safe }}
+
+  <h1>
+      {{result.title}}
+  </h1>
+<br/>
+{{ result.content|safe|truncatechars_html:100  }}
+<br/>
+
+<form action="#">
+     <div align="center">
+ <button class="btn btn-light btnOrder"  type="submit">ادامه مطلب</button>
+            </div>
+        </form>
+        </p>
+</div>
+    <br>
+{% endfor %}
+{% else %}
+<div align="center">
+    <img src="{% static 'img/download (10).jfif'  %}">
+    <br>
+
+    <h3>
+نتیجه ای یافت نشد
+</h3>
+
+</div>
+{% endif %}
+{% endif %}
+<p>
+        <br>
+    </p>
+<p>
+        <br>
+    </p>
+
+{% endblock %}

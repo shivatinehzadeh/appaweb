@@ -1,0 +1,37 @@
+{% extends 'template.html' %}
+{% load static %}
+
+{% block content %}
+    <br>
+    <br>
+    <div class="center" >
+    <h1 class="red">
+
+در این آموزش شما میتوانید به طور مستمر با ما در ارتباط باشید. این آموزش از طیرق تلگرام صورت میگیرد و پشتیبانی کامل خواهید داشت
+    </h1>
+    </div>
+    <br>
+    <div class="blog container" dir="rtl">
+{% for p in package %}
+<div class=" center shadow-lg">
+
+  <h1>  {{ p.title }}   </h1>
+    <br>
+    {{ p.content|safe }}
+    <br>
+        <label> مبلغ قالب پرداخت</label>:&nbsp;&nbsp;{{ p.price}}
+   <label>   تومان</label>
+    <br>
+      <form action="{% url "appaweb:learnSell" id=p.id %}">
+
+           <button class="btn btn-light btnregister"  type="submit">خرید</button>
+
+        </form>
+<br>
+</div>
+    {% endfor %}
+     <p>
+    <br>
+    </p>
+    </div>
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends 'template.html' %}
+{% load static %}
+
+{% block content %}
+    <br>
+    <br>
+    <br>
+
+    <div>
+{% for p in package %}
+
+<div class="container center " dir="rtl">
+<table class="inform " align="center">
+    <tr>
+        <td class="logoPack" >
+
+            {{ p.content|safe }}
+        </td>
+        <td class="detail" rowspan="2">
+              <h1>  {{ p.title }}   </h1>
+    <br>
+    {{ p.detail|safe }}
+        </td>
+    </tr>
+    <tr>
+   <td class="sell">
+ <div class="justify">
+   <label> مبلغ قالب پرداخت</label>:&nbsp;&nbsp;{{ p.price}}
+   <label>   تومان</label>
+    <br>
+   <label>مدرس</label>:  {{ p.teacher}}
+    <br>
+    <label> زمان آموزش</label>: {{ p.time}}
+    <br>
+</div>
+
+   <form action="{% url "appaweb:request" id=p.id title=p.title %}" method="post" >
+   {% if  request.user.is_staff or request.user.is_authenticated or request.user.is_superuser %}
+
+       {% if s == 1 %}
+          {% for sel in sell %}
+           {% if sel.nameOfmyClass == p.title %}
+            <a href="{{ p.file.url }}" target="_blank">
+          <button class="btn btn-light btnregister"  type="button">دانلود</button>
+             </a>
+           {% elif sel.nameOfmyClass != p.title  %}
+         <button class="btn btn-light btnregister"  type="submit">پرداخت</button>
+        {% endif %}
+         {% endfor %}
+      {% else %}
+         <button class="btn btn-light btnregister"  type="submit">پرداخت</button>
+
+        {% endif %}
+
+     {% else %}
+        <button class="btn btn-light btnregister"  type="button"  onclick="register()">پرداخت</button>
+            {% endif %}
+    {% csrf_token %}
+   <input type="hidden" value="{{ p.price }}" id="price" name="price"  >
+        </form>
+</td>
+    </tr>
+</table>
+<br>
+<div class="zemanat container justify font-weight-bold">
+    <p>
+   ضمانت: آموزش های آپاوب با توجه کانل به نیاز دانشجو به روز رسانی می شود. در صورت عدم رضایت شما میتوانید با ارسال رسید واریز تا دو هفته پس از واریز اقدام به دریافت 70% وجه خود نمایید.
+</p>
+</div>
+
+
+<br>
+</div>
+      {% endfor %}
+<p><br></p>
+    </div>
+{% endblock %}

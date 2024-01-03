@@ -1,0 +1,84 @@
+  {% extends "template.html" %}
+
+{% block content %}
+    <br>
+    <div class="center">
+    {% for m in messages %}
+          <label class="color"> {{ m }}</label>
+        {% endfor %}
+   </div>
+    <br>
+    <div class="containerWidth container">
+    <div class="accdiv  center">
+        <div class="loginDiv border shadow-lg direction">
+     <h2>ورود</h2>
+        <div class="loginMiddleDiv">
+
+
+  <form method="post" action="{% url 'appaweb:Login' %}">
+     <table>
+
+         {% for field in lform %}
+             <tr >
+      <td class="padding">
+              {% csrf_token %}
+
+        {{ field.label_tag }}
+          </td>
+      <td>
+        {{ field}}
+</td>
+           </tr>
+      {% endfor %}
+  </p>
+  </table>
+  <br>
+
+    <button type="submit" class="btn btn-outline-light btnlogin py-2 px-lg-4">ورود</button>
+
+
+      <p>
+          <br>
+          <a href="{% url 'appaweb:password_reset' %}">رمز خود را فراموش کرده اید؟</a>
+      </p>
+  </form>
+</div>
+    </div>
+
+        <div class=" border shadow-lg direction">
+          <h2>ثبت نام</h2>
+  <form method="post" action="{% url 'appaweb:Signup' %}">
+  <table >
+
+    {% csrf_token %}
+    {% for field in form %}
+        <tr>
+      <p>
+          <td class="right padding">
+            {% csrf_token %}
+        {{ field.label_tag }}
+          </td>
+      <td>
+        {{ field}}
+</td></tr>
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+
+
+    {% endfor %}
+
+  </table>
+  <br>
+   <button type="submit" class="btn btn-outline-info  btnregister2 py-2 px-lg-4">
+ثبت نام
+   </button>
+  </form>
+<br>
+    </div>
+    </div>
+    <p><br></p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "template.html" %}
+{% load static %}
+{% block content %}
+    <div class="hashie">
+<div class="rahgiri container shadow-lg center">
+ با عرض تشکر از اعتماد شما
+  <p></p>
+برای ارتباط با ما و شروع کلاس کد رهگیری را به آیدی تلگرام ارسال کنید
+<p></p>
+آیدی:
+<a href="t.me/Appaweb_company">Appaweb_company</a>
+    <p></p>
+    {% for p in package %}
+<form action="{% url "appaweb:request" id=p.id title=p.title %}" method="post" >
+       {% if s == 1 %}
+      {% for sel in sell %}
+           {% if sel.nameOfmyClass == p.title %}
+               <label> کد رهگیری
+                   :{{ num }} </label>
+           {% elif sel.nameOfmyClass != p.title %}
+              <label> شما این آموزش را خریداری نکرده اید!</label>
+          {% endif %}
+            {% endfor %}
+     {% else %}
+           شما این آموزش را خریداری نکرده اید!
+            {% endif %}
+    {% csrf_token %}
+   <input type="hidden" value="{{ p.price }}" id="price" name="price"  >
+        </form>
+</td>
+    </tr>
+</table>
+<br>
+
+      {% endfor %}
+</div>
+</div>
+{% endblock %}

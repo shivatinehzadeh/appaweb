@@ -1,0 +1,227 @@
+{% extends 'template.html' %}
+{% load static %}
+{% block header %}
+<header>
+<div class="intro-section custom-owl-carousel " id="home-section"  >
+ <nav class="navbar navbar-expand-lg  " id="menu">
+     <a  href="#">  <img src="{% static 'img/logo-appaweb.png' %}" class="navbar-brand" alt="لوگو آپاوب" href="#" id="imagenav"></a>
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar"  >
+            <ul class="navbar-nav" id="navItem" >
+                <li class="nav-item" >
+                    <a class="nav-link" href="{% url 'appaweb:base' %}">صفحه اصلی</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="{% url 'appaweb:base' %}#khadamat" > خدمات </a>
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'appaweb:searchposts' %}">مقالات</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'appaweb:aboutUS' %}">درباره ما</a>
+                </li>
+                {% if request.user.is_staff or request.user.is_authenticated or request.user.is_superuser %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'appaweb:logout' %}" >خروج</a>
+                </li>
+                    {% else %}
+                     <li class="nav-item">
+                     <a class="nav-link" href="{% url 'appaweb:Signup' %}" >ثبت نام/ ورود</a>
+
+                </li>
+              {% endif %}
+
+            </ul>
+        </div>
+      <span onclick="openNav()" id="open">&#9776; </span>
+
+ </nav>
+
+
+      <div class="container" >
+
+        <div class="row align-items-center" id="slideshow" >
+          <div class="col-lg-5 mr-auto" data-aos="fade-up">
+
+            <div class="owl-carousel slide-one-item-alt-text">
+              <div class="slide-text">
+                             <h1>
+                                به سایت آپاوب خوش آمدید
+                             </h1>
+                <p class="mb-5" dir="rtl" >خدمات این سایت شامل برنامه نویسی شامل پروژه های وب سایت و اپلیکیشن و همچنین آموزش  زبان های مختلف برنامه نویسی می شود </p>
+                <p><a href="{% url 'appaweb:base' %}#khadamat"  class="btn btn-outline-light py-3 px-5">مشاهده خدمات</a></p>
+
+              </div>
+              <div class="slide-text">
+                 <h1> برنامه نویسی  با بالاترین کیفیت</h1>
+                <p dir="rtl">
+                    سفارش برنامه نویسی انواع سایت و اپلیکیشن و ربات با ضمانت و پشتیبانی فنی رایگان به مدت یک سال
+                </p>
+                <p><a href="{% url 'appaweb:Order' %}" target="_blank" class="btn btn-outline-light py-3 px-5">ثبت سفارش برنامه نویسی</a></p>
+              </div>
+              <div class="slide-text">
+                <h1>آموزش برنامه نویسی</h1>
+                <p class="mb-5" dir="rtl">آموزش سریع و جامع برنامه نویسی به صورت عملی و حل تمرین با ضمانت بازگشت وجه در صورت عدم رضایت، در پکیج های آموزش آپاوب </p>
+                <p><a href="{% url 'appaweb:onlinePackage' %}" target="_blank" class="btn btn-outline-light py-3 px-5">مشاهده آموزش</a></p>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-lg-6 ml-auto"  data-aos="fade-up" data-aos-delay="100"  >
+
+            <div class="owl-carousel slide-one-item-alt">
+              <img src="{% static 'img/cup-coffee-wireless-keyboard-mouse_140725-8957.jpg' %}" alt="به آپاوب خوش آمدید" class="img-fluid">
+               <img src="{% static 'img/coding-man_1098-18084.jpg' %}" alt="برنامه نویسی وبسایت و اپلیکیشن" class="img-fluid">
+                <img src="{% static 'img/couple-people-working-computer-codes-programming_53876-391.jpg' %}" alt="آموزش برنامه نویسی" class="img-fluid" style="width: 100%">
+            </div>
+
+            <div class="owl-custom-direction">
+              <a href="#" class="custom-prev"><span class="icon-keyboard_arrow_left"></span></a>
+              <a href="#" class="custom-next"><span class="icon-keyboard_arrow_right"></span></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+</header>
+
+{% endblock %}
+{% block content %}
+ <br>
+{#  ozviat   #}
+    <div class="paddingBottom">
+    <div align="center">
+    <div class="shadow-lg center" id="registerDiv" >
+
+              برای عضویت در انجمن برنامه نویسان ثبت نام کنید
+  &nbsp;  <a href="{% url 'appaweb:Signup' %}"><div class="btn  btnregister " id="btnregister" onclick="click()">ثبت نام</div></a>
+    </div>
+</div>
+{#  3 bakhshe khadamat      #}
+    <div id="khadamat">
+    <br>
+          <br>
+        <div class="container center div " id="animationDiv" >
+
+    <div class="center  khadamat shadow " >
+        <img src="{% static 'img/working-code_1098-19858.jpg' %}" class="shadow"  id="khdmt" alt="سایت و اپلیکیشن و بنامه نویسی">
+        <p class="justify" dir="rtl">
+             سفارش سایت و اپلیکیشن و پروژه های برنامه نویسی پذیرفته می شود! فقط کافیست بر روی لینک زیر کلیک کنید و سفارش خود را ثبت کنید. در اولین فرصت کارشناسان ما با شما تماس خواهند گرفت.
+        </p>
+       <a href="{% url 'appaweb:Order' %}">
+
+         <div class="btn  btnregister btnkhadamat "> ثبت سفارش </div>
+       </a>
+    </div>
+
+    <div class=" center  khadamat shadow">
+          <img src="{% static 'img/images (2).jpg' %}" class="shadow"  id="khdmt" alt="پکیج آموزشی">
+
+         <p class="justify" dir="rtl">
+         پکیج های آموزشی بررسی شده توسط اساتید مجرب: شما میتوانید با دریافت پکیج های آموزشی در هر زمان و مکانی شروع به یادگیری برنامه نویسی کنید و آموزش ها را به طور کامل در اختیار داشته باشید.
+</p>
+       <a href="{% url 'appaweb:onlinePackage' %}">
+
+     <div class="btn   btnregister  btnkhadamat" > خرید </div>
+ </a>
+    </div>
+
+    <div class=" center  khadamat shadow">
+                <img src="{% static 'img/images (1).jpg' %}" id="khdmt" class="shadow" alt="کلاس آنلاین" >
+
+            <p class="justify" dir="rtl">
+                کلاس های مجازی  تضمینی با پشتیبانی کامل: میتوانید آموزش های مجازی را در روز و ساعت مشخصی ویدیو آن جلسه را دریافت کنید و تمرین های خود را برای پشتیبانی ارسال کنید.
+    </p>
+       <a href="{% url 'appaweb:onlineLearn' %}">
+     <div class="btn btnregister btnkhadamat">
+
+         خرید
+     </div>
+                    </a>
+
+</div>
+
+    </div>
+
+    </div>
+ </div>
+    <div class="container-fluid" >
+    <br>
+   <h1 class="font-weight-bold center "> نمونه کار</h1>
+    </div>
+{#  slide nemune kar  #}
+       <div id="demo" class="carousel slide " data-ride="carousel">
+        <ul class="carousel-indicators" id="slideshow">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner border ">
+            <div class="carousel-item active">
+                <img src="{% static 'img/mankann_kQkX5pU.jpg' %}" alt="باشگاه مانکن" class="slideimage">
+                <div class="carousel-caption ">
+                    <h3>باشگاه مانکن</h3>
+                    <p>خدمات سایت باشگاهی</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/IMG-20200516-WA0023.jpg' %}" alt="Chicago" class="slideimage">
+                <div class="carousel-caption" id="slide2">
+                    <h3>ویرا سنجش آرکا</h3>
+                    <p>سایت بازرسی کف مخازن</p>
+                </div>
+            </div>
+{#            <div class="carousel-item">#}
+{#                <img src="{% static 'img/coding-man_1098-18084.jpg' %}" alt="New York" class="slideimage">#}
+{#                <div class="carousel-caption">#}
+{#                    <h3>////</h3>#}
+{#                    <p>////////</p>#}
+{#                </div>#}
+{#            </div>#}
+        </div>
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+{# 6 maqale akhar #}
+  <div class="marginblog ">
+<div class="center ">
+<h1>
+   آخرین مقالات
+</h1>
+<br>
+ <div class="container div2 center  " >
+  {% for posts in post %}
+    <div class="center border shadow-lg" id="blogDiv">
+
+   <div  dir="rtl" >
+            <br>
+           {{ posts.image|safe }}
+
+           <h2> {{ posts.title }}</h2>
+
+    <p>
+                <form action="{% url "appaweb:searchposts_result" id=posts.id title=posts.title %}">
+<div align="center">
+           <button class="btn btn-light btnblog borderblog"  type="submit">مطالعه مطلب</button>
+</div>
+        </form>
+        </p>
+
+       </div>
+
+    </div>
+                {% endfor %}
+    </div>
+    </div>
+
+</div>
+
+</div>
+{% endblock %}

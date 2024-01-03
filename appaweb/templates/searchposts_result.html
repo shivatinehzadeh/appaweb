@@ -1,0 +1,47 @@
+{% extends "template.html" %}
+{% load static %}
+
+{% block  content %}
+    <div>
+    {% if messages %}
+        {% for m in messages %}
+   <div class="textDiv"> {{ m }} </div>
+        {% endfor %}
+    {% endif %}
+    <div class="right container showText shadow-lg" >
+        <div dir="rtl">
+            <br>
+            {{ post.image|safe }}
+            <br>
+  <h1> {{ post.title }}</h1>
+             </div>
+ <p>
+          <div >
+ {{ post.content|safe }}
+    </div>
+
+</div>
+        <div class="right container" dir="rtl">
+        <h2>نظرات شما:</h2>
+        <div class="border-right border-left border-top" >
+            {% for cm in commentBlog %}
+            {{ cm.comment }}
+            <br>
+                <hr>
+            {% endfor %}
+        </div>
+        <div class="center ">
+            <br>
+        <form method="post" action="{% url 'appaweb:sendCm' id=post.id title=post.title %}">
+       {% csrf_token %}
+            {{ form }}
+            <p></p>
+       <button class="btn btn-light btnOrder"  type="submit">ارسال</button>
+      <input type="hidden" value="{{ post.title }}" id="mytitle" name="mytitle" >
+        </form>
+         </div>   </div>
+</div>
+    <p>
+<br>
+    </p>
+{% endblock %}

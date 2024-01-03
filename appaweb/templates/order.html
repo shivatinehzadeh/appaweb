@@ -1,0 +1,74 @@
+{% extends 'template.html' %}
+{% load static %}
+
+{% block content %}
+    <br>
+<div>
+{% for m in messages %}
+   <div class="textDiv"> {{ m }} </div>
+{% endfor %}
+</div>
+    <div class="containerWidth container accdiv">
+
+        <div class="orderDiv border shadow-lg direction   center">
+
+          <div class="orderDiv2 container">
+              <p>
+                <h3 class="h3font" >
+برای ثبت سفارش در زمینه ی سایت، اپلیکیشن و ربات و یا دریافت مشاوره رایگان فرم را پر کنید.
+            <p></p>
+                همکاران ما در اولین فرصت با شما تماس خواهند گرفت.
+</h3>
+            </p>
+        </div>
+
+        </div>
+        <div class=" border shadow-lg direction">
+
+  <form method="post" action="{% url 'appaweb:Order' %}">
+  <table >
+
+    {% csrf_token %}
+    {% for field in form %}
+        <tr>
+      <p>
+          <td class=" padding2">
+            {% csrf_token %}
+        {{ field.label_tag }}
+          </td>
+      <td class="right padding3">
+                   {% csrf_token %}
+        {{ field}}
+</td>
+        </tr>
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+
+
+    {% endfor %}
+  <td class=" padding2">
+
+        توضیحات
+          </td>
+      <td class="right padding3">
+     <textarea  id="descrip" name="descrip" class="widthDescrip" ></textarea>
+      </td>
+  </table>
+  <br>
+  <div class="center">
+   <button type="submit" class="btn btn-outline-info  btnregister2 py-2 px-lg-3">
+ثبت سفارش
+   </button>
+      </div>
+  </form>
+<br>
+    </div>
+    </div>
+     <p>
+    <br>
+    </p>
+</div>
+
+{% endblock %}

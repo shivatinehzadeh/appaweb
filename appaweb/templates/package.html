@@ -1,0 +1,32 @@
+{% extends 'template.html' %}
+{% load static %}
+
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <div class="blog container">
+{% for p in package %}
+<div class=" center shadow-lg container" dir="rtl">
+   <br>
+    <br>
+  <h1>  {{ p.title }}   </h1>
+    <br>
+    {{ p.content|safe }}
+    <br>
+    <label> مبلغ قالب پرداخت</label>:&nbsp;&nbsp;{{ p.price}}
+   <label>   تومان</label> <br>
+    <br>
+  <form action="{% url "appaweb:packageSell" id=p.id %}">
+
+           <button class="btn btn-light btnOrder"  type="submit">خرید</button>
+
+        </form>
+<br>
+</div>
+    {% endfor %}
+     <p>
+    <br>
+    </p>
+    </div>
+{% endblock %}

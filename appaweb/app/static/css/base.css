@@ -1,0 +1,899 @@
+.slideimage{
+    width: 100%;
+    height: 500px;
+}
+header{
+    z-index: 2;
+}
+
+.index{
+    z-index:2;
+}
+.index>a{
+   color: white;
+    z-index: 2;
+}
+.widthDemo{
+    width: 80%;
+}
+#footer{
+  bottom:0;
+  width:100%;
+  height:200px;
+  color:#fff;
+   z-index:1;
+      text-align: center;
+     background-color:#23608C  ;
+}
+a{
+    color: black;
+}
+#footer>a{
+
+  color:#fff;
+
+}
+main{
+         background-color:#23608C  ;
+    border-bottom-right-radius: 80px;
+}
+
+#demo{
+    height: 400px;
+}
+#open{
+ display: none;
+   margin-top: -10px;
+}
+.img{
+    width: 300px;
+}
+
+.h3font{
+    text-align: justify;
+    font-size: 22px;
+    padding:100px  50px 40px 50px;
+}
+input{
+    width: 180px;
+}
+.btnkhadamat{
+    width: 120px;
+}
+.containerWidth{
+    width: 55%;
+
+}
+.loginMiddleDiv{
+    padding-top: 65px;
+}
+.loginDiv{
+    background-color: #23608C ;
+    color: #FFFFFF;
+}
+
+.loginDiv a{
+    color: aquamarine;
+}
+.left{
+    text-align: left;
+}
+.orderDiv{
+    color: #FFFFFF;
+    background: url("../img/man-hand-typing-keyboard-input-code-register-system_42708-293.jpg");
+ background-size: 100% 100%;
+
+}
+.orderDiv2{
+    color: #FFFFFF;
+    background: rgba(35,96,140,0.7)  ;
+    height:400px;
+    margin-top: -17px;
+    z-index: 2;
+    }
+.div{
+display:flex;
+justify-content: space-around;
+}
+
+.accdiv{
+ display: grid;
+ grid-template-columns: repeat(2, 350px);
+ grid-row-gap: 20px;
+}
+#slide2{
+    color: black;
+}
+#slideshow{
+ text-align: justify;
+
+}
+.blog{
+    display: grid;
+ grid-template-columns: repeat(3, 350px);
+justify-content: space-between;
+      grid-row-gap: 20px;
+      animation: botToTop 0.5s;
+}
+
+@keyframes botToTop {
+    0%{
+        margin-top: 50px;
+    }
+     100%{
+        margin-top:0;
+    }
+}
+
+#Body{
+    background-color: #FFFFFF;
+    min-height: 350px;
+    z-index: 5;
+    position: relative;
+    border-bottom-left-radius: 80px;
+}
+
+body{
+      padding-bottom:183px;
+}
+
+#respbutton{
+  top: 0;
+    right: 0;
+    direction: rtl;
+    position: absolute;
+    padding-top: 30px;
+}
+#respnavbar{
+    background-color: rgba(2,2,2,0.95);
+}
+
+#respnavbar a{
+        color: white;
+
+}
+#imagenav{
+    width: 20%;
+ margin-top: 10px;
+}
+#imagenav2{
+ margin-top: -20px;
+    width:7%;
+}
+#menu {
+    height: 80px;
+}
+#home-section{
+    background-color: white;
+
+}
+.nav-item{
+    display: inline-block;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding-right: 100px;
+    font: bold 20px "B Homa";
+    text-align: center;
+}
+.nav-item::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    border-bottom: solid 3px;
+    background: #FFFFFF;
+    transition: width .3s;
+}
+.nav-item:hover::after {
+    width: 100%;
+}
+#collapsibleNavbar {
+    top: 0;
+    right: 0;
+    direction: rtl;
+    position: absolute;
+    padding-top: 20px;
+}
+#collapsibleNavbar a{
+    color: #ffffff ;
+}
+#navItem{
+    float: right;
+
+}
+.khadamat{
+    padding: 20px;
+}
+
+.sidenav {
+display: none;
+}
+#designed{
+    color: lightgray;
+    bottom: 0;
+}
+.row{
+    padding: 10px ;
+
+}
+.image {
+  display: block;
+  width: 300px;
+  height: auto;
+}
+#maintext{
+    text-align: justify;
+     font: 20px "B Homa";
+    direction: rtl;
+}
+/*#overlay*/
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 20px;
+  right: 20px;
+  background-color: rgba(0,0,139,0.6);
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: 0.5s ease;
+}
+#imageOverlay:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.textDiv{
+    font:bold 20px "B Homa";
+    color: darkgreen;
+    text-align: center;
+}
+#contact{
+    font: 20px "B Zar";
+    text-align: right;
+    float: right;
+    margin: 8px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px gray;
+        background-color: white;
+    width: 45%;
+    direction: rtl;
+}
+#contactForm{
+    direction: rtl;
+     text-align: right;
+    font: 20px "B Homa";
+    margin: 10px;
+        padding: 10px;
+     box-shadow: 2px 2px 5px gray;
+    background-color: white;
+width: 45%;
+
+}
+.center{
+text-align: center;
+
+}
+h1{
+    font: bold 30px "B Homa";
+
+}
+
+.btn-block{
+    width: 50%;
+
+}
+.btn-block:hover{
+    background-color: darkblue;
+
+}
+.paddingRight{
+    padding-right: 20px;
+}
+#registerDiv{
+margin-top:80px;
+    width: 50%;
+    direction: rtl;
+display: inline-block;
+padding: 20px;
+line-height: 1;
+-moz-box-shadow: 5px 5px 1px black;
+-webkit-box-shadow:5px 5px 1px black;
+    font: normal 20px "B Homa";
+    color: black;
+
+}
+#btnsocial{
+    float: right;
+    margin-top: 5px;
+    margin-right: 20px;
+    height: 5px;
+}
+.color{
+    color: green;
+    font-size: 24px;
+}
+.rahgiri{
+    direction: rtl;
+    background-color: #FFFFFF;
+}
+.hashie{
+    padding:120px;
+}
+.borderblog{
+     border: solid #E94F19 1px;
+
+}
+.btnregister{
+    background-color: #FFFFFF;
+color:#E94F19 ;
+    border: solid #E94F19 1px;
+    padding: 10px;
+display: inline-block;
+
+font:bold 16px "B Homa";
+line-height: 1;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+box-shadow: 0px 5px 10px #999;
+transition: all 1s;
+  background-size: 0;
+}
+.btnregister:hover{
+color:#E94F19 ;
+    background-color: #FFFFFF;
+-moz-box-shadow: 0 5px 10px #999;
+-webkit-box-shadow: 0 5px 10px #999;
+
+}
+
+.btnsearch{
+  background-image: linear-gradient(-45deg, #FFFFFF, #FFFFFF, #FFFFFF);
+    color:#E94F19 ;
+display: inline-block;
+padding: 10px;
+font:bold 16px "B Homa";
+line-height: 1;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+box-shadow: 0px 5px 10px #999;
+margin-top: -5px;
+}
+.btnsearch:hover{
+color:#E94F19 ;
+}
+.btnregister2{
+  background-image: linear-gradient( #FFFFFF, #FFFFFF, #FFFFFF);
+    color:#23608C ;
+display: inline-block;
+padding: 5px;
+font:bold 16px "B Homa";
+line-height: 1;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+box-shadow: 0px 5px 10px #999;
+transition: all 1s;
+  background-size: 0;
+}
+.btnregister2:hover{
+color:#23608C ;
+    background-color: #FFFFFF;
+-moz-box-shadow: 0 5px 10px #999;
+-webkit-box-shadow: 0 5px 10px #999;
+
+}
+.about{
+    border-radius: 20px;
+    font:normal 16px "B Homa";
+    text-align: justify;
+    direction: rtl;
+}
+.btnOrder{
+background-image: linear-gradient( #FFFFFF, #FFFFFF, #FFFFFF);
+color:#E94F19 ;
+display: inline-block;
+font:bold 16px "B Homa";
+line-height: 1;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+box-shadow: 0px 5px 10px #999;
+background-size: 0;
+
+
+}
+.btnOrder:hover{
+ background-image: linear-gradient(-45deg, #FFFFFF, #FFFFFF, #FFFFFF);
+color:#E94F19 ;
+}
+.btnblog{
+     padding: 10px;
+background-image: linear-gradient( #FFFFFF, #FFFFFF, #FFFFFF);
+color:#E94F19 ;
+display: block;
+font:bold 16px "B Homa";
+line-height: 1;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+box-shadow: 0px 5px 10px #999;
+background-size: 0;
+position: absolute;
+bottom:80px;
+margin-right: 9%;
+}
+.btnblog:hover{
+ background-image: linear-gradient(-45deg, #FFFFFF, #FFFFFF, #FFFFFF);
+color:#E94F19 ;
+}
+
+.logoPack{
+    border: solid;
+    margin: 10px;
+    height: 20px;
+    width:100%;
+   }
+.detail{
+   text-align: justify;
+   border: solid;
+    margin-top: 10px;
+ width: 100%;
+}
+.sell{
+    border: solid;
+    margin: 10px;
+    padding: 10px;
+}
+.zemanat{
+    border: solid;
+    width:79%;
+}
+.inform{
+    margin-top: 20px;
+    border-collapse: separate;
+    border-spacing: 5px;
+}
+.justify{
+text-align: justify;
+
+}
+.right{
+    text-align: right;
+    padding-right: 20px;
+}
+.btnlogin{
+  background-image: linear-gradient(-45deg, #FFFFFF, #FFFFFF, #FFFFFF);
+    color:#FFFFFF ;
+display: inline-block;
+padding: 5px;
+font:bold 16px "B Homa";
+line-height: 1;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+box-shadow: 0px 3px 5px whitesmoke;
+transition: all 1s;
+  background-size: 0;
+}
+.btnlogin:hover{
+color:#23608C ;
+    background-color: #FFFFFF;
+-moz-box-shadow: 0 5px 10px #999;
+-webkit-box-shadow: 0 5px 10px #999;
+
+}
+
+
+#blog .btnregister{
+
+    position: page;
+}
+
+
+
+.btnkhdmt:hover::after{
+     width: 70%;
+}
+.btnkhdmt::after{
+
+  left: 0;
+}
+
+
+
+#contactUs{
+    background-color: white;
+    height: 50px;
+}
+#khdmt{
+   width: 250px;
+    height: 300px;
+
+}
+.khdmt{
+     animation: botToTop 0.5s;
+}
+@keyframes botToTop {
+    0%{
+        margin-top: 50px;
+    }
+     100%{
+        margin-top:0;
+    }
+}
+
+
+#blogDiv{
+    width: 95%;
+    height:350px;
+      font: normal 22px "B Homa";
+    text-align: center;
+}
+
+
+ #goTop{
+     display: none;
+     background-color: darkblue;
+     width: 50px;
+     height: 50px;
+     right: 0;
+     margin-right: 20px;
+     margin-bottom: 10px;
+     font-size: 25px;
+     text-align: center;
+     padding-top: 10px;
+     border-radius: 10px;
+     bottom: 0;
+     position: fixed;
+     z-index: 20;
+ }
+  .Top a{
+         color: white;
+  }
+
+.navMenu{
+   background-color:  #23608C;
+    height: 90px;
+}
+  table{
+    display: table;
+    table-layout: fixed;
+    width: 80%;
+
+  }
+
+.td{
+    height: 210px;
+    overflow: hidden;
+
+}
+.direction{
+    direction: rtl;
+}
+.padding{
+    padding: 10px;
+}
+.padding2{
+    padding:0 0 20px 20px;
+}
+.input{
+width:30%;
+height:40px;
+border-radius:5px;
+
+}
+#blogText{
+display: grid;
+ grid-template-columns: repeat(3, 350px);
+ justify-content: space-between;
+ grid-row-gap: 20px;
+ height: 450px;
+}
+
+.showText{
+
+    text-align: justify;
+}
+.search{
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    justify-content: space-between;
+    grid-row-gap: 5px;
+}
+.red{
+    color: red;
+}
+.widthDescrip{
+    width:115%;
+    height: 100px;
+}
+.div2 {
+        justify-content: space-around;
+        display: grid;
+        grid-template-rows: 1fr 10px 10px;
+        grid-template-columns: repeat(3, 350px);
+        grid-row-gap: 20px;
+        font: normal 20px "B Homa";
+    }
+.marginblog{
+    padding-top: 200px;
+}
+ #open{
+     display: none;
+ }
+ .padding-blog {
+     padding: 15px;
+ }
+
+@media screen and (max-width:1200px) {
+
+
+    .btnblog{
+position: relative;
+        bottom: 0;
+margin-right: 0;
+}
+    .search{
+    width: 90%;
+   display: grid;
+ grid-template-columns: repeat(1, 100%);
+justify-content: space-between;
+ grid-row-gap: 5px;
+}
+
+
+    #khdmt{
+   width: 70%;
+    height: 300px;
+
+}
+        .div {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: repeat(1, 70%);
+        justify-content: space-around;
+        grid-row-gap: 20px;
+        font: normal 20px "B Homa";
+    }
+        #Body{
+    background-color: white;
+    min-height: 350px;
+    z-index: 5;
+            position: relative;
+
+}
+    .div2 {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: repeat(1, 100%);
+
+        grid-row-gap: 20px;
+        font: normal 20px "B Homa";
+    }
+    .hashie{
+    padding:120px 50px 120px 50px;
+}
+    #blogDiv{
+    width: 100%;
+    height: 450px;
+    font: normal 22px "B Homa";
+    text-align: center;
+}
+   .blog{
+display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+ grid-template-columns: repeat(1,100%);
+    justify-content: space-around;
+  grid-row-gap: 20px;
+
+}
+#blogText{
+display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+ grid-template-columns: repeat(1,100%);
+    justify-content: space-around;
+  grid-row-gap: 20px;
+    height: 100%;
+}
+    #registerDiv {
+        margin-top: 0;
+        width: 100%;
+    }
+header{
+    z-index: 5;
+    position: relative;
+}
+
+body{
+      padding-bottom:632px;
+}
+#footer{
+  width:100%;
+  height:650px;
+}
+
+.accdiv{
+ display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+ grid-template-columns: repeat(1,100%);
+    justify-content: space-around;
+  grid-row-gap: 5px;
+    font:normal 20px "B Homa";
+}
+input{
+    width: 120px;
+}
+
+
+.containerWidth{
+    width: 90%;
+
+}
+#imagenav{
+    width: 20%;
+ margin-top: -20px;
+}
+table{
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+
+  }
+.logoPack{
+    border: solid;
+    margin: 10px;
+    height: 20px;
+    width:100%;
+   }
+.detail{
+   text-align: justify;
+   border: solid;
+    margin-top: 10px;
+ width: 100%;
+ font-size: 12px;
+
+}
+.sell{
+    font-size: 12px;
+    border: solid;
+    margin: 10px;
+    padding: 10px;
+}
+.h3font{
+    text-align: justify;
+    font-size: 18px;
+    padding:80px  50px 40px 50px;
+}
+.orderDiv2{
+    color: #FFFFFF;
+    background: rgba(35,96,140,0.7)  ;
+    background-size:100% 100% ;
+    height: 100%;
+    z-index: 2;
+    }
+.padding2{
+    padding:0 10px 0 30px;
+    direction: rtl;
+    font-size: 16px;
+}
+.widthDescrip{
+    width:90%;
+    height: 100px;
+}
+td.padding2{
+    width:20%;
+}
+    .sidenav {
+        display: block;
+        height:100%;
+        width: 0;
+        position: fixed;
+        z-index: 20000;
+        top: 0;
+        right: 0;
+        overflow-x: hidden;
+        transition: 0.2s;
+        padding-top: 60px;
+    }
+
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        font-size: 20px;
+        color: white;
+        display: block;
+        z-index: 2000;
+        transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+        color: gray;
+    }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 50%;
+        font-size: 20px;
+
+    }
+.paddingBottom{
+    padding: 50px;
+}
+  #open {
+        display: block;
+        top: 0;
+        right: 0;
+        direction: rtl;
+        position: absolute;
+        padding-top: 30px;
+        padding-right: 50px;
+        font-size: 30px;
+        cursor: pointer
+    }
+#navItem {
+    display: none;
+}
+}
+@media screen and (max-width:980px) {
+    #contact {
+        float: none;
+        margin: 0;
+        padding: 0;
+        box-shadow: 2px 2px 5px gray;
+        background-color: white;
+        width: 100%;
+    }
+
+    #contactForm {
+        margin: 0;
+        width: 100%;
+
+    }
+    #navItem2 {
+        width: 100%;
+        float: inside;
+        padding-right: 0;
+    }
+    .nav-item {
+        padding-right: 0;
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .nav-item::after {
+        content: '';
+        display: block;
+        width: 0;
+        margin-left: 35%;
+        height: 2px;
+        border-bottom: solid 3px;
+        background: #FFFFFF;
+        transition: width .3s;
+    }
+
+    .nav-item:hover::after {
+        width: 30%;
+    }
+
+
+
+
+    header{
+    z-index: 2;
+}
+.sell{
+    font-size: 9px;
+    border: solid;
+    margin: 10px;
+    padding: 10px;
+}
+
+}
